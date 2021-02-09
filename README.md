@@ -17,6 +17,6 @@ todo chrome app with html, css, javascript
 ![스크린샷, 2021-02-10 00-54-10](https://user-images.githubusercontent.com/47022167/107390011-9e1e6780-6b3a-11eb-8d37-3cdf4f3fa7ab.png)
 
 ## 참고 사이트 
-[유튜브 - 타이핑 효과 랜딩 페이지 만들기](https://www.youtube.com/watch?v=e56H5n1SvEs)
-[유튜브 - 3D Flip Button 만들기](https://www.youtube.com/watch?v=hFvPP53kldk)
+[유튜브 - 타이핑 효과 랜딩 페이지 만들기](https://www.youtube.com/watch?v=e56H5n1SvEs)<br/>
+[유튜브 - 3D Flip Button 만들기](https://www.youtube.com/watch?v=hFvPP53kldk)<br/>
 [유튜브 - Awesome 3D Animation Javascript Tutorial](https://www.youtube.com/watch?v=XK7T3mY1V-w)
