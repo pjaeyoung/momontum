@@ -30,5 +30,7 @@
     setTimeout(() => {
       $main.classList.remove("hidden");
     }, 500);
+
+    localStorage.setItem("nickname", JSON.stringify($input_nickname.value));
   });
 })();
