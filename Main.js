@@ -21,8 +21,23 @@ function getGreetingFromHours(hours) {
   }
 }
 
-function printGreeting($greet_message, nickname, greeting) {
-  $greet_message.textContent = `${greeting} ${nickname}!`;
+function* typingAnimation({ message, $greet_message }) {
+  for (const word of message) {
+    $greet_message.textContent = `${$greet_message.textContent}${word}`;
+    yield true;
+  }
+
+  return false;
+}
+
+function printGreeting({ $greet_message, nickname, greeting }) {
+  const message = `${greeting} ${nickname}!`;
+  const ani = typingAnimation({ message, $greet_message });
+  const timer = setInterval(() => {
+    if (!ani.next()) {
+      clearInterval(timer);
+    }
+  }, 120);
 }
 
 export function init(nickname) {
@@ -30,9 +45,9 @@ export function init(nickname) {
   $main.classList.remove("hidden");
 
   const [hours, minutes] = getTime();
-  printGreeting(
-    document.querySelector(".greet-message"),
+  printGreeting({
+    $greet_message: document.querySelector(".greet-message"),
     nickname,
-    getGreetingFromHours(parseInt(hours))
-  );
+    greeting: getGreetingFromHours(parseInt(hours)),
+  });
 }
