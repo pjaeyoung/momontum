@@ -71,12 +71,15 @@ body {
   height: 100vh;
   padding: 5rem 2rem;
   perspective: 20000px;
+  transition: transform 0.5s;
 }
 
 .main .greet-message {
   font-size: 5rem;
   color: white;
   text-align: center;
+  transform-style: preserve-3d;
+  transition: transform 0.5s;
 }
 
 .main .clock {
@@ -161,12 +164,7 @@ footer i {
   position: relative;
   display: inline-block;
   transform: rotateZ(-40deg);
-}
-
-footer .shadow {
-  right: -205px;
-  top: 10px;
-  color: var(--shadow-color);
+  text-shadow: 5px 10px 10px var(--shadow-color);
 }
 
 .hidden {
