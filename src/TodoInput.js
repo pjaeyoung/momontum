@@ -6,28 +6,30 @@ export default class TodoInput {
   }
 
   initEvent(setTodos) {
+    const $main = document.querySelector(".main");
+    const $greeting = document.querySelector(".greet-message");
+    const $pencil = document.querySelector(".fa-pencil-alt");
+
+    function initAnimation() {
+      $main.style.transform = "none";
+      $greeting.style.transform = "translateY(0px)";
+      $pencil.style.transform =
+        "rotateZ(-40deg) translateY(0px) translateX(0px)";
+    }
     this.$form_todo.addEventListener("submit", (e) => {
       e.preventDefault();
       if (this.$input_todo.value.length > 0) {
         setTodos(this.$input_todo.value);
         this.$input_todo.value = "";
-        $main.style.transform = "none";
-        $greeting.style.transform = "translateY(0px)";
+        initAnimation();
       }
     });
-
-    const $main = document.querySelector(".main");
-    const $greeting = document.querySelector(".greet-message");
-    const $pencil = document.querySelector(".fa-pencil-alt");
 
     let rotateZ = getRotateZ();
     this.$input_todo.addEventListener("input", (e) => {
       const textLength = e.target.value.length;
       if (textLength === 0) {
-        $main.style.transform = "rotateZ(0deg)";
-        $greeting.style.transform = "translateY(0px)";
-        $pencil.style.transform =
-          "rotateZ(-40deg) translateY(0px) translateX(0px)";
+        initAnimation();
         return;
       }
       let z = rotateZ.next().value;
