@@ -40,7 +40,7 @@ body {
   text-align: center;
 }
 
-.intro,
+.intro .form-nickname,
 .form-todo {
   width: 40%;
   min-width: 500px;
