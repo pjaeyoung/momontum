@@ -15,10 +15,15 @@ export function init(nickname) {
 
   printTime(document.querySelector(".clock"));
 
-  const $Todos = new Todos(document.querySelector(".todos"));
+  const $Todos = new Todos({
+    $todos: document.querySelector(".todos"),
+    initialTodos: JSON.parse(localStorage.getItem("todos")) || [],
+  });
 
   function setTodos(newTodo) {
-    $Todos.setState([...$Todos.todos, newTodo]);
+    const newTodos = [...$Todos.todos, newTodo];
+    $Todos.setState(newTodos);
+    localStorage.setItem("todos", JSON.stringify(newTodos));
   }
 
   new TodoInput({

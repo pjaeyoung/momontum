@@ -1,5 +1,5 @@
 export default class Todos {
-  constructor($todos, initialTodos = []) {
+  constructor({ $todos, initialTodos = [] }) {
     this.$target = $todos;
     this.todos = initialTodos;
     this.createTodo = this.createTodo.bind(this);
