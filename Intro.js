@@ -1,3 +1,5 @@
+import * as Main from "./Main.js";
+
 export function init() {
   const $form_nickname = document.querySelector(".form-nickname");
   const $input_nickname = document.querySelector(".input-nickname");
@@ -31,6 +33,7 @@ export function init() {
     $intro.style.opacity = "0";
     setTimeout(() => {
       $main.classList.remove("hidden");
+      Main.init($input_nickname.value);
     }, 500);
 
     localStorage.setItem("nickname", JSON.stringify($input_nickname.value));
