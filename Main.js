@@ -1,5 +1,6 @@
 import { printGreeting } from "./greeting.js";
 import { printTime } from "./clock.js";
+import Todos from "./Todos.js";
 
 export function init(nickname) {
   const $main = document.querySelector(".main");
@@ -12,4 +13,6 @@ export function init(nickname) {
   });
 
   printTime(document.querySelector(".clock"));
+
+  new Todos(document.querySelector(".todos"));
 }
