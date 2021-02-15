@@ -11,10 +11,12 @@ export default class Todos {
     this.$target.addEventListener("click", (e) => {
       const { index } = e.target.dataset;
       if (index !== undefined) {
-        this.setState([
+        const newTodos = [
           ...this.todos.slice(0, parseInt(index)),
           ...this.todos.slice(parseInt(index) + 1),
-        ]);
+        ];
+        this.setState(newTodos);
+        localStorage.setItem("todos", JSON.stringify(newTodos));
       }
     });
   }
